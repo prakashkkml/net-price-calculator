@@ -29,7 +29,7 @@ public class TaxRateProviderController {
     @Operation(summary = "To fetch the tax rate based on the country code")
     public ResponseEntity<TaxRateResponse> getTaxRate(@PathVariable @NotBlank String countryCode) throws InvalidRequestException {
         Optional<TaxRate> optionalTaxRate = taxRateProviderService.get(countryCode);
-        if (optionalTaxRate.isEmpty()) {
+        if (!optionalTaxRate.isPresent()) {
             throw new InvalidRequestException("The country code is not a valid one.");
         }
         return ResponseEntity.status(HttpStatus.OK).body(optionalTaxRate.get().getTaxRateResponse());
