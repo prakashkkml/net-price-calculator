@@ -1,0 +1,16 @@
+application:
+    url: http://localhost:8080
+country:
+    default:
+        vat:
+            rate: 0.2
+spring:
+    cache:
+        cache-names: countryVatCache
+        caffeine:
+            spec: maximumSize=100, expireAfterAccess=60s
+logging:
+    level:
+        com:
+            prakash:
+                netpricecalculator: DEBUG
