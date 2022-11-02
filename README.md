@@ -20,10 +20,11 @@ Which can be modified/customized by calling the update **/api/v1/tax-rate-provid
 - Spring Caching
 - Live Demo
 - Unit & Integration Tests
+- Swagger-UI
 - Documentation
 ## Supported Operations
 
-#### Get all repositories
+#### Get calculated net price
 
 ```http
   GET /api/v1/net-price-calculator
@@ -34,7 +35,26 @@ Which can be modified/customized by calling the update **/api/v1/tax-rate-provid
 | `countryISO`| `string` | **Required**. To countryISO-Code (eg: DE, US etc.)|
 
 
+#### Get VAT rate for the country
+
+```http
+  GET /api/v1/tax-rate-provider/{countryCode}
+```
+| Path Variable | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `countryCode`      | `String` | **Required**. A valid countryISO-Code (eg: DE, US etc.)|
+
+
+#### Update VAT rate for the country
+
+```http
+  PUT /api/v1/tax-rate-provider
+```
+| Request Body | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `countryCode`      | `String` | **Required**. A valid countryISO-Code (eg: DE, US etc.)|
+| `vat`      | `BigDecimal` | **Required**. VAT rate of the country|
+
+
 ## Demo Live
-
-
-
+https://net-price-calculator.herokuapp.com/swagger-ui/index.html
