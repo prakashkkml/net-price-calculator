@@ -14,7 +14,7 @@
 	<name>net-price-calculator</name>
 	<description>Net Price Calculator demo project for Spring Boot backend</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 		<spring-cloud.version>2021.0.4</spring-cloud.version>
 		<openapi.version>1.6.11</openapi.version>
 	</properties>
